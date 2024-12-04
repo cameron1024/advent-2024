@@ -25,7 +25,6 @@ fn part_1(input: &str) -> u64 {
 }
 
 fn part_2(input: &str) -> u64 {
-    println!("hello");
     let mut result = 0;
     let mut enabled = true;
 
@@ -33,7 +32,6 @@ fn part_2(input: &str) -> u64 {
         let substring = &input[i..];
 
         if let Some(new_enabled) = check_do_dont(substring) {
-            println!("setting to {new_enabled}");
             enabled = new_enabled;
         }
 
@@ -48,16 +46,13 @@ fn part_2(input: &str) -> u64 {
 }
 
 fn check_do_dont(input: &str) -> Option<bool> {
-    let result = if input.starts_with("do()") {
+    if input.starts_with("do()") {
         Some(true)
     } else if input.starts_with("don't()") {
         Some(false)
     } else {
         None
-    };
-
-    println!("input is {input}, result is {result:?}");
-    result
+    }
 }
 
 fn check(mut input: &str) -> Option<u64> {
