@@ -1,11 +1,6 @@
-use std::fmt::Display;
-
 use clap::Parser;
 
-use crate::{
-    day_1::{self, part_1_answer},
-    day_2, day_3, day_4, day_5,
-};
+use crate::{day_1, day_2, day_3, day_4, day_5};
 
 #[allow(clippy::type_complexity)]
 const SOLUTIONS: &[(fn() -> String, fn() -> String)] = &[
