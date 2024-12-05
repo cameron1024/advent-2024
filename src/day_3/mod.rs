@@ -4,12 +4,12 @@ const TEST_INPUT: &str = include_str!("./test_input");
 const TEST_INPUT_2: &str = include_str!("./test_input_2");
 const INPUT: &str = include_str!("./input");
 
-pub fn part_1_answer() -> u64 {
-    part_1(INPUT)
+pub fn part_1_answer() -> String {
+    part_1(INPUT).to_string()
 }
 
-pub fn part_2_answer() -> u64 {
-    part_2(INPUT)
+pub fn part_2_answer() -> String {
+    part_2(INPUT).to_string()
 }
 
 fn part_1(input: &str) -> u64 {

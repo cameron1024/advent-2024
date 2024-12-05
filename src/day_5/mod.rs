@@ -6,12 +6,12 @@ mod update_data;
 const TEST_INPUT: &str = include_str!("./test_input");
 const INPUT: &str = include_str!("./input");
 
-pub fn part_1_answer() -> i64 {
-    part_1(INPUT)
+pub fn part_1_answer() -> String {
+    part_1(INPUT).to_string()
 }
 
-pub fn part_2_answer() -> i64 {
-    part_2(INPUT)
+pub fn part_2_answer() -> String {
+    part_2(INPUT).to_string()
 }
 
 #[derive(Debug, Clone, Copy)]
