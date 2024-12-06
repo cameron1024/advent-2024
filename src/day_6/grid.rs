@@ -61,6 +61,10 @@ impl Grid {
         self.visited.set(index, true);
     }
 
+    fn has_visited_any_direction(&self, x: usize, y: usize) -> bool {
+        Direction::all().any(|d| self.has_visited_same_direction(x, y, d))
+    }
+
     fn has_visited_same_direction(&self, x: usize, y: usize, direction: Direction) -> bool {
         let index = (x + y * self.height) * 4;
         let index = index + (direction as u8) as usize;
@@ -87,11 +91,13 @@ impl Grid {
     }
 
     pub fn count_visited(&self) -> usize {
-        self.visited.count_ones()
+        (0..self.width)
+            .flat_map(|x| (0..self.width).map(move |y| (x, y)))
+            .filter(|(x, y)| self.has_visited_any_direction(*x, *y))
+            .count()
     }
 
     pub fn temporary_obstacle_mut(&mut self) -> &mut Option<(usize, usize)> {
         &mut self.temporary_obstacle
     }
-
 }

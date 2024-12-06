@@ -16,6 +16,10 @@ impl Direction {
             Self::Left => Self::Up,
         }
     }
+
+    pub fn all() -> impl Iterator<Item = Direction> {
+        [Self::Up, Self::Down, Self::Left, Self::Right].into_iter()
+    }
 }
 
 /// A combination of the position of a guard, and the direction they are facing
