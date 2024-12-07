@@ -1,6 +1,6 @@
 use clap::Parser;
 
-use crate::{day_1, day_2, day_3, day_4, day_5, day_6};
+use crate::{day_1, day_2, day_3, day_4, day_5, day_6, day_7};
 
 #[allow(clippy::type_complexity)]
 const SOLUTIONS: &[(fn() -> String, fn() -> String)] = &[
@@ -27,6 +27,10 @@ const SOLUTIONS: &[(fn() -> String, fn() -> String)] = &[
     (
         day_6::part_1_answer as fn() -> String,
         day_6::part_2_answer as fn() -> String,
+    ),
+    (
+        day_7::part_1_answer as fn() -> String,
+        day_7::part_2_answer as fn() -> String,
     ),
 ];
 
