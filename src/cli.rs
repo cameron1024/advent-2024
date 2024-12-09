@@ -1,37 +1,24 @@
 use clap::Parser;
 
-use crate::{day_1, day_2, day_3, day_4, day_5, day_6, day_7};
+macro_rules! day {
+    ($name:ident) => {
+        (
+            crate::$name::part_1_answer as fn() -> String,
+            crate::$name::part_2_answer as fn() -> String,
+        )
+    };
+}
 
 #[allow(clippy::type_complexity)]
 const SOLUTIONS: &[(fn() -> String, fn() -> String)] = &[
-    (
-        day_1::part_1_answer as fn() -> String,
-        day_1::part_2_answer as fn() -> String,
-    ),
-    (
-        day_2::part_1_answer as fn() -> String,
-        day_2::part_2_answer as fn() -> String,
-    ),
-    (
-        day_3::part_1_answer as fn() -> String,
-        day_3::part_2_answer as fn() -> String,
-    ),
-    (
-        day_4::part_1_answer as fn() -> String,
-        day_4::part_2_answer as fn() -> String,
-    ),
-    (
-        day_5::part_1_answer as fn() -> String,
-        day_5::part_2_answer as fn() -> String,
-    ),
-    (
-        day_6::part_1_answer as fn() -> String,
-        day_6::part_2_answer as fn() -> String,
-    ),
-    (
-        day_7::part_1_answer as fn() -> String,
-        day_7::part_2_answer as fn() -> String,
-    ),
+    day!(day_1),
+    day!(day_2),
+    day!(day_3),
+    day!(day_4),
+    day!(day_5),
+    day!(day_6),
+    day!(day_7),
+    day!(day_8),
 ];
 
 #[derive(Debug, Parser)]
